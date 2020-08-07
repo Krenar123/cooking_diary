@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_162111) do
+ActiveRecord::Schema.define(version: 2020_08_07_220856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "instructions", force: :cascade do |t|
+    t.integer "order"
+    t.text "instruction_info"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "recipe_id"
+    t.index ["recipe_id"], name: "index_instructions_on_recipe_id"
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.string "title"
