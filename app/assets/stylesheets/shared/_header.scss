@@ -1,31 +1,33 @@
 $red-color: #de2846;
 
-body{
+body {
     background-color: rgb(247, 245, 245);
     font-family: 'Sriracha', cursive;
 }
 
-.title, a {
+.title, strong, a {
     color: $red-color;
 }
 
-a.navbar-item:hover{
+
+
+a.navbar-item:hover {
     color: $red-color;
     background-color: transparent;
 }
 
-.is-danger{
+.is-danger {
     background-color: $red-color;
 }
 
-.hero-head{
+.hero-head {
     background-color: white;
     margin-top: 5%;
     padding: 1%;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
 }
 
-.navbar{
+.navbar {
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -39,4 +41,9 @@ a.navbar-item:hover{
     position: relative;
     width:150px;
     height: 70px;
+}
+
+.footer {
+    background-color: rgb(63, 63, 63);
+    color: white;
 }
