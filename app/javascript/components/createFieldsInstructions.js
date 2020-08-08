@@ -1,6 +1,5 @@
 $(document).ready(function() {
     const createInstruction = $('#addInstruction');
-    const removeInstruction = $('.fa-times');
 
     createInstruction.click(function(){
         var date = new Date();
@@ -21,10 +20,10 @@ $(document).ready(function() {
             <li>
                 <div class='columns is-mobile'>
                     <div class='column is-2'>
-                        <input class='input' " + nameOrder + " id=" + idOrder + " type='number' placeholder='Step'>
+                        <input class='input' name=${nameOrder} id=${idOrder} type='number' placeholder='Step'>
                     </div>
                     <div class='column'>
-                        <input id=" + idInstruction + " name=" + nameInstruction + " class='input' type='text' placeholder='Instruction...'>
+                        <input id=${idInstruction} name=${nameInstruction} class='input' type='text' placeholder='Instruction...'>
                     </div>
                     <div class='column is-1'>
                         <div class='icon_times'>
@@ -33,10 +32,10 @@ $(document).ready(function() {
                     </div>
                 </div>
             </li>`
-        $("ul").append(htmlElement);
+        $(".instructions_list").append(htmlElement);
     });
 
-    $("ul").on('click', 'i',  function(){
-        $(this).parent().parent().parent().remove()
+    $(".instructions_list").on('click', 'i',  function(){
+        $(this).parent().parent().parent().parent().remove()
     });
 });
