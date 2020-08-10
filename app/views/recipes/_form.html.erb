@@ -14,12 +14,35 @@
     </div>
     
     <label class="label">Instructions</label>
-    <%= render 'instruction_form', form: form %>
-    
+    <ul class="instructions_list">
+        <%= form.fields_for :instructions do |instructions_field| %>
+            <%= render 'instruction_form', instructions_field: instructions_field %>
+        <% end %>
+    </ul>
+    <div class="field">
+        <div class="control has-icons-left has-icons-right" style="margin-top:5%;">
+            <div class="input" id="addInstruction" > Add </div>
+            <span class="icon is-small is-left">
+                <i class="fa fa-plus"></i>
+            </span>
+        </div>
+    </div>
 
     <label class="label">Ingridients</label>
-    <%= render 'ingridients_form', form: form %>
-
+    <ul class="ingridients_list">
+        <%= form.fields_for :ingridients do |ingridients_field| %>
+            <%= render 'ingridients_form', ingridients_field: ingridients_field %>
+        <% end %>
+    </ul>
+    <div class="field">
+        <div class="control has-icons-left has-icons-right" style="margin-top:5%;">
+            <div class="input" id="addIngridients" > Add </div>
+            <span class="icon is-small is-left">
+                <i class="fa fa-plus"></i>
+            </span>
+        </div>
+    </div>
+    
     <div class="field is-grouped">
         <div class="control">
             <%= form.submit 'Submit', class: 'button is-dark' %>
