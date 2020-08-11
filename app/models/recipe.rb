@@ -8,10 +8,10 @@ class Recipe < ApplicationRecord
 
     accepts_nested_attributes_for :instructions,
                                   allow_destroy: true,
-                                  reject_if: :reject_recipe
+                                  reject_if: :all_blank
     accepts_nested_attributes_for :ingridients,
                                   allow_destroy: true,
-                                  reject_if: :reject_recipe
+                                  reject_if: :all_blank
 
     validates :title,
               presence: true,
