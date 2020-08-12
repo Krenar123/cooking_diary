@@ -20,7 +20,7 @@
                 <h5>Igridients: </h5>
                 <div class="recipe__fields">
                     <% recipe.ingridients.each do |ing| %>
-                        <p><%= ing.name %></p>
+                        <p><%= ing.name %>  <%= link_to 'Edit', edit_recipe_ingridient_path(recipe, ing) %></p>
                     <% end %>
                 </div>
             </u>

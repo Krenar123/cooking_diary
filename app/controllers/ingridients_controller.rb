@@ -15,6 +15,22 @@ class IngridientsController < ApplicationController
         end
     end
 
+    def edit
+        @ingridient = Ingridient.find(params[:id])
+        @recipe = @ingridient.recipe
+    end
+
+    def update
+        @ingridient = Ingridient.find(params[:id])
+        @recipe = @ingridient.recipe
+
+        if @ingridient.update(ingridient_params)
+            redirect_to @recipe
+        else
+            render :edit
+        end
+    end
+
     private 
 
     def ingridient_params
