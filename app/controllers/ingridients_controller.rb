@@ -1,4 +1,6 @@
 class IngridientsController < ApplicationController
+    before_action :find_ingridient, only: [:edit, :update, :destroy]
+
     def new
         @recipe = Recipe.find(params[:recipe_id])
         @ingridient = @recipe.ingridients.build
@@ -16,14 +18,9 @@ class IngridientsController < ApplicationController
     end
 
     def edit
-        @ingridient = Ingridient.find(params[:id])
-        @recipe = @ingridient.recipe
     end
 
     def update
-        @ingridient = Ingridient.find(params[:id])
-        @recipe = @ingridient.recipe
-
         if @ingridient.update(ingridient_params)
             redirect_to @recipe
         else
@@ -32,9 +29,6 @@ class IngridientsController < ApplicationController
     end
 
     def destroy
-        @ingridient = Ingridient.find(params[:id])
-        @recipe = @ingridient.recipe
-
         if @ingridient.destroy
             redirect_to @recipe
         else
@@ -46,5 +40,10 @@ class IngridientsController < ApplicationController
 
     def ingridient_params
         params.require(:ingridient).permit(:name)
+    end
+
+    def find_ingridient
+        @ingridient = Ingridient.find(params[:id])
+        @recipe = @ingridient.recipe
     end
 end
