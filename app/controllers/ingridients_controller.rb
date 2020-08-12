@@ -31,6 +31,17 @@ class IngridientsController < ApplicationController
         end
     end
 
+    def destroy
+        @ingridient = Ingridient.find(params[:id])
+        @recipe = @ingridient.recipe
+
+        if @ingridient.destroy
+            redirect_to @recipe
+        else
+            render @recipe
+        end
+    end
+
     private 
 
     def ingridient_params
