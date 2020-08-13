@@ -16,6 +16,8 @@ class Recipe < ApplicationRecord
     validates :title,
               presence: true,
               length: { in: MIN_TITLE_LENGTH..MAX_TITLE_LENGTH }
+
     validates :description, presence: true, length: { maximum: MAX_DESC_LENGTH }
+
     validates_associated :instructions, :ingridients
 end
