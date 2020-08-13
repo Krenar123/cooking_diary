@@ -8,5 +8,5 @@ class Instruction < ApplicationRecord
               { only_integer: true, greater_than: 0 }
 
     validates :instruction_info, presence: true, length:
-              { in: MIN_INS_LENGTH..MIN_INS_LENGTH }
+              { in: MIN_INS_LENGTH..MAX_INS_LENGTH }
 end
