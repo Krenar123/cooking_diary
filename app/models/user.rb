@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_many :recipes
+    has_many :recipes, dependent: :destroy
 
     before_save :downcase_email, :capitalize_full_name
     

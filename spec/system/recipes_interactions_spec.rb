@@ -71,7 +71,6 @@ RSpec.describe "RecipesInteractions" do
 
         expect(page).to have_content(title)
         expect(page).to have_content(description)
-        expect(page).to have_content(instruction_info)
         expect(page).to have_content(ing_name)
       end
     end
