@@ -6,4 +6,4 @@
         <%= render @user %>
     </div>
 </div>
-<!-- Ktu vje pjesa ku boj render ecipes -->
+<%= render partial: 'recipes/recipe', collection: @user.recipes %>
