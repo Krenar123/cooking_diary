@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
         idInstruction = 
             "recipe_instructions_attributes_0_instruction_info".replace("0", mSec);
         nameInstruction = 
-             "recipe[instructions_attributes][0][instruction_info]".replace("0", mSec);    
+            "recipe[instructions_attributes][0][instruction_info]".replace("0", mSec);    
 
         
         const htmlElement = `
