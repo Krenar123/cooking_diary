@@ -17,12 +17,10 @@ class User < ApplicationRecord
     
     validates :first_name, :last_name, :email, presence: true
     validates :password,
-              length:
-              { in: MIN_PASS_LENGTH..MAX_PASS_LENGTH,
-                message: 'must contain at least 6 characters' },
-              format:
-              { with: VALID_PASSWORD,
-                message: 'must contain digit, lower - upper case and symbol' }
+              length: { in: MIN_PASS_LENGTH..MAX_PASS_LENGTH,
+                        message: 'must contain at least 6 characters' },
+              format: { with: VALID_PASSWORD,
+                        message: 'must contain digit, lower/upper case and symbol' }
     validates :email, format: { with: VALID_EMAIL_REGEX },
                       case_sensitive: false,
                       uniqueness: { message: 'already exists.' }
