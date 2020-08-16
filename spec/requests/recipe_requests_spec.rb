@@ -11,6 +11,7 @@ RSpec.describe "RecipeRequests" do
           }
         }
       }
+
       post recipes_path, post_params 
 
       follow_redirect!
@@ -63,6 +64,7 @@ RSpec.describe "RecipeRequests" do
             }
           }
         }
+
         patch recipe_path(recipe), patch_params
 
         expect(response).to redirect_to(recipe_path(recipe))
@@ -95,6 +97,7 @@ RSpec.describe "RecipeRequests" do
             }
           }
         }
+        
         patch recipe_path(recipe), patch_params
 
         expect(response).to redirect_to(root_path)
