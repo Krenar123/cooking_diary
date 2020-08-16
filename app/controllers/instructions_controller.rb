@@ -4,6 +4,7 @@ class InstructionsController < ApplicationController
 
     def new
         @recipe = Recipe.find(params[:recipe_id])
+        
         if user_equals?(@recipe.user)
             @instruction = @recipe.instructions.build
         else

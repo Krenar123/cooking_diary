@@ -4,6 +4,7 @@ class IngridientsController < ApplicationController
 
     def new
         @recipe = Recipe.find(params[:recipe_id])
+
         if user_equals?(@recipe.user)
             @ingridient = @recipe.ingridients.build
         else
@@ -13,12 +14,13 @@ class IngridientsController < ApplicationController
     end
 
     def create
-        recipe = Recipe.find(params[:recipe_id])
-        if user_equals?(recipe.user)
-            ingridient = recipe.ingridients.create(ingridient_params)
+        @recipe = Recipe.find(params[:recipe_id])
 
-            if ingridient.save
-                redirect_to recipe
+        if user_equals?(@recipe.user)
+            @ingridient = @recipe.ingridients.create(ingridient_params)
+
+            if @ingridient.save
+                redirect_to @recipe
             else
                 render :new
             end
