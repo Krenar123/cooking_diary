@@ -43,14 +43,18 @@ RSpec.describe Recipe do
         it 'should prevent empty instruction records' do
           re = { title: 'Cake', description: 'Test', "instructions_attributes":
             { '0' => { order: nil, isntruction_info: nil } } }
+
           recipe = Recipe.create(re)
+
           expect(recipe.instructions.count).to eq(0)
         end
 
         it 'should prevent empty ingridient records' do
           re = { title: 'Cake', description: 'Test', "ingridients_attributes":
             { '0' => { name: nil } } }
+
           recipe = Recipe.create(re)
+
           expect(recipe.ingridients.count).to eq(0)
         end
       end
@@ -60,11 +64,13 @@ RSpec.describe Recipe do
 
         it 'should destroy all instructions' do
           create_list(:instruction, 1, recipe: recipe)
+
           expect { Recipe.last.destroy }.to change { Instruction.count }.by(-1)
         end
 
         it 'should destroy all ingridients' do
           create_list(:ingridient, 1, recipe: recipe)
+          
           expect { Recipe.last.destroy }.to change { Ingridient.count }.by(-1)
         end
       end

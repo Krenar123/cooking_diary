@@ -31,7 +31,7 @@ RSpec.describe User do
 
     context 'trying to create user with same email' do
       subject { create(:user) }
-      it { is_expected.to validate_uniqueness_of(:email).with_message("already exists.") }
+      it { is_expected.to validate_uniqueness_of(:email).with_message('already exists.') }
     end
   end
 
@@ -41,8 +41,10 @@ RSpec.describe User do
     context 'dependecies' do
       context 'when destroying' do
         let(:user) { create(:user) }
+
         it 'should destroy all tweets' do
           create_list(:recipe, 1, user: user)
+          
           expect { user.destroy }.to change { Recipe.count }.by(-1)
         end
       end
