@@ -4,8 +4,8 @@
 
 ### What is CookingDiary?
 
-**CookingDiary** is Rails web application using (RestAPI) methods, where people can write their recipes se others recipes with instructions whichhave orders and info also with ingridients.
-This app is used while cooking, you need  a good dinner check this web app for some delicios (food) recipes. You can check out different recipes ( in details ) also can post a recipe, can see others recipes etc.. 
+**CookingDiary** is Rails web application using (RestAPI) methods, where people can write their recipes se others recipes with instructions which have orders and info also with ingredients.
+This app is used while cooking, you need  a good dinner check this web app for some delicious (food) recipes. You can check out different recipes ( in details ) also can post a recipe, can see others recipes etc.. 
 
 
 ## Contribution
@@ -44,8 +44,8 @@ Once you clone this project from github or download it, make sure you run `updat
 ### Starting the application
 
 First thing you have to do is:
-`rails db:migrate, rails db:create & rails db:seed` . 
-Or you can use `rails db:reset` and than use `rails db:seed`
+`rails db:create rails db:migrate & rails db:seed` . 
+Or you can use `rails db:create` and than use `rails db:reset`
 
 Before that if you have problem connecting with database you might use `sudo service postgresql start` - for Ubuntu
 
